@@ -1,0 +1,30 @@
+# Datos y modelos (muy pesados para Git)
+data/
+prod/model_files/
+prod/modelo.pth
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Entornos virtuales
+venv/
+.env/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter (si se crean notebooks temporales)
+.ipynb_checkpoints/
