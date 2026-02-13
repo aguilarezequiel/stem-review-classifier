@@ -4,6 +4,7 @@
 # Text preprocessing, model loading, prediction, and Steam API integration.
 # ==============================================================================
 
+import os
 import re
 import torch
 import requests
@@ -38,6 +39,12 @@ def load_model(model_path="model_files"):
     Loads the fine-tuned model and tokenizer.
     Returns model, tokenizer, and device.
     """
+    # Build absolute path based on the location of this file (utils.py)
+    # This makes the app portable - you can move the 'prod' folder anywhere
+    if not os.path.isabs(model_path):
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(script_dir, model_path)
+    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = BertTokenizer.from_pretrained(model_path)
     model = BertForSequenceClassification.from_pretrained(model_path)
