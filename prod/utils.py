@@ -8,7 +8,7 @@ import os
 import re
 import torch
 import requests
-from transformers import BertForSequenceClassification, BertTokenizer
+from transformers import BertForSequenceClassification, AutoTokenizer
 
 
 def clean_text(text):
@@ -46,7 +46,7 @@ def load_model(model_path="model_files"):
         model_path = os.path.join(script_dir, model_path)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    tokenizer = BertTokenizer.from_pretrained(model_path)
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
     model = BertForSequenceClassification.from_pretrained(model_path)
     model.to(device)
     model.eval()
