@@ -1,7 +1,5 @@
 # Datos y modelos (muy pesados para Git)
 data/
-prod/model_files/
-prod/modelo.pth
 
 # Python
 __pycache__/
