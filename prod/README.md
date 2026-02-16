@@ -63,11 +63,33 @@ python 05_export_model.py
 
 ### 2. Aplicación Web (en `prod/`)
 
+#### 🖥️ Ejecución Local
+
 ```bash
 cd prod
+
+# Instalar dependencias
 pip install -r requirements.txt
+
+# Ejecutar la aplicación
 streamlit run app.py
 ```
+
+La aplicación se abrirá automáticamente en tu navegador en `http://localhost:8501`
+
+#### ☁️ Deploy a Streamlit Cloud
+
+Para hacer deploy en Streamlit Cloud, sigue la guía completa en:
+📄 [STREAMLIT_DEPLOY.md](../STREAMLIT_DEPLOY.md)
+
+**Resumen rápido:**
+1. Ve a [share.streamlit.io](https://share.streamlit.io/)
+2. Conecta tu cuenta de GitHub
+3. Selecciona este repositorio y la ruta `prod/app.py`
+4. Click en "Deploy"
+
+> **Nota:** Los archivos del modelo están en Git LFS y Streamlit Cloud los descargará automáticamente.
+
 
 ## Metodología
 

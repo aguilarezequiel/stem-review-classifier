@@ -1,9 +1,24 @@
+# Streamlit framework
 streamlit==1.41.0
-torch==2.5.1
+
+# PyTorch CPU-only version for Streamlit Cloud (lighter than GPU version)
+# For local development with GPU, install: torch==2.5.1
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
+
+# Hugging Face Transformers for BERT
 transformers==4.47.0
+
+# Data processing
 pandas==2.2.3
 numpy==1.26.4
+
+# ML utilities
 scikit-learn==1.6.0
+
+# Plotting (optional, if you add visualizations later)
 matplotlib==3.9.3
 seaborn==0.13.2
+
+# API requests for Steam API
 requests==2.32.3
