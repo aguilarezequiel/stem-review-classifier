@@ -58,26 +58,6 @@ with tab_manual:
         key="manual_input",
     )
 
-    # Quick examples
-    st.markdown("**Or try an example:**")
-    col1, col2 = st.columns(2)
-    with col1:
-        if st.button("👍 Positive example", key="pos_ex"):
-            st.session_state["manual_input"] = (
-                "This game is absolutely fantastic! The graphics are stunning, "
-                "the gameplay is smooth, and I've spent hundreds of hours enjoying "
-                "every moment. Highly recommend to anyone who loves RPGs."
-            )
-            st.rerun()
-    with col2:
-        if st.button("👎 Negative example", key="neg_ex"):
-            st.session_state["manual_input"] = (
-                "Terrible experience. The game crashes constantly, the servers "
-                "are always down, and the developers don't seem to care about "
-                "fixing any bugs. Complete waste of money."
-            )
-            st.rerun()
-
     if st.button("🔍 Classify", type="primary", key="classify_btn"):
         text = st.session_state.get("manual_input", "")
         if not text or len(text.strip()) < 10:
@@ -132,21 +112,6 @@ with tab_steam:
             step=10,
             key="num_reviews",
         )
-
-    # Some popular games as quick shortcuts
-    st.markdown("**Popular games:**")
-    game_cols = st.columns(4)
-    games = [
-        ("Counter-Strike 2", "730"),
-        ("Elden Ring", "1245620"),
-        ("Death Stranding", "1850570"),
-        ("Cyberpunk 2077", "1091500"),
-    ]
-    for i, (name, gid) in enumerate(games):
-        with game_cols[i]:
-            if st.button(name, key=f"game_{gid}"):
-                st.session_state["app_id_input"] = gid
-                st.rerun()
 
     if st.button("🚀 Analyze Game", type="primary", key="analyze_btn"):
         current_app_id = st.session_state.get("app_id_input", "").strip()
