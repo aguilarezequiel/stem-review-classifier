@@ -1,5 +1,7 @@
-# Datos y modelos (muy pesados para Git)
-data/
+# Carpetas pesadas dentro de data/
+data/model_save/
+data/tensors/
+data/dataset.csv
 
 # Python
 __pycache__/
